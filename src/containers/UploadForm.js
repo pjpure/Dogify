@@ -58,14 +58,14 @@ class UploadImageForm extends Component {
           ) : null}
 
           {/* <Col>
-              <Button
-                disabled={this.props.pristine || this.props.submitting}
-                onClick={this.resetForm}
-                style={{ float: "left" }}
-              >
-                Clear
-              </Button>
-            </Col> */}
+            <Button
+              disabled={this.props.pristine || this.props.submitting}
+              onClick={this.resetForm}
+              style={{ float: "left" }}
+            >
+              Clear
+            </Button>
+          </Col> */}
         </Form>
         <div className="clear" />
       </div>

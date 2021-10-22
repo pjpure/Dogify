@@ -1,10 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ImagePreview = ({ imagefile }) =>
+const ImagePreview = ({
+  imagefile,
+  getInputProps,
+  getRootProps,
+  error,
+  touched,
+}) =>
   imagefile.map(({ name, preview, size }) => (
     <div key={name} className="render-preview">
-      <div className="image-container">
+      <div {...getRootProps({ className: "image-container" })}>
+        <input {...getInputProps()} />
+
         <img src={preview} alt={name} />
       </div>
     </div>
