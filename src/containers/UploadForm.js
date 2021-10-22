@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Field, reduxForm } from "redux-form";
 import DropZoneField from "../components/dropzoneField";
-
+import { Button, Row, Col } from "react-bootstrap";
 const imageIsRequired = (value) => (!value ? "Required" : undefined);
 
 class UploadImageForm extends Component {
@@ -33,7 +33,10 @@ class UploadImageForm extends Component {
     <div className="setBackground">
       <div className="app-container">
         {/* <h1 className="title">Dogify</h1> */}
-        <Form style={{paddingTop:"200px"}} onSubmit={this.props.handleSubmit(this.handleFormSubmit)}>
+        <Form
+          style={{ paddingTop: "200px" }}
+          onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
+        >
           <Field
             name="imageToUpload"
             component={DropZoneField}
@@ -42,22 +45,26 @@ class UploadImageForm extends Component {
             handleOnDrop={this.handleOnDrop}
             validate={[imageIsRequired]}
           />
-          <button
-            type="submit"
-            className="uk-button uk-button-primary uk-button-large submit"
-            disabled={this.props.submitting}
-          >
-            Submit
-          </button>
-          <button
-            type="button"
-            className="uk-button uk-button-default uk-button-large clear"
-            disabled={this.props.pristine || this.props.submitting}
-            onClick={this.resetForm}
-            style={{ float: "right" }}
-          >
-            Clear
-          </button>
+          <Row style={{ textAlign: "center" }}>
+            <Col>
+              <Button
+                className="custom-btn"
+                type="submit"
+                disabled={this.props.submitting}
+              >
+                Let's Dogify
+              </Button>
+            </Col>
+            {/* <Col>
+              <Button
+                disabled={this.props.pristine || this.props.submitting}
+                onClick={this.resetForm}
+                style={{ float: "left" }}
+              >
+                Clear
+              </Button>
+            </Col> */}
+          </Row>
         </Form>
         <div className="clear" />
       </div>

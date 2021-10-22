@@ -5,10 +5,11 @@ import store from "./store/store";
 import UploadForm from "./containers/UploadForm";
 import "uikit/dist/css/uikit.min.css";
 import "./styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 render(
-    <Provider store={store}>
-      <UploadForm />
-    </Provider>,
+  <Provider store={store}>
+    <UploadForm />
+  </Provider>,
   document.getElementById("root")
 );
