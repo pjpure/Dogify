@@ -9,13 +9,23 @@ class UploadImageForm extends Component {
 
   handleFormSubmit = formProps => {
     const fd = new FormData();
-    fd.append("imageFile", formProps.imageToUpload[0]);
-    alert(JSON.stringify(formProps, null, 4));
+    fd.append("imageFile", formProps.imageToUpload.file);
     // append any additional Redux form fields
     // create an AJAX request here with the created formData
+
+    alert(JSON.stringify(formProps, null, 4));
   };
 
-  handleOnDrop = newImageFile => this.setState({ imageFile: newImageFile });
+  handleOnDrop = (newImageFile, onChange) => {
+    const imageFile = {
+      file: newImageFile[0],
+      name: newImageFile[0].name,
+      preview: URL.createObjectURL(newImageFile[0]),
+      size: newImageFile[0].size
+    };
+
+    this.setState({ imageFile: [imageFile] }, () => onChange(imageFile));
+  };
 
   resetForm = () => this.setState({ imageFile: [] }, () => this.props.reset());
 
@@ -34,14 +44,14 @@ class UploadImageForm extends Component {
         />
         <button
           type="submit"
-          className="uk-button uk-button-primary uk-button-large"
+          className="uk-button uk-button-primary uk-button-large submit"
           disabled={this.props.submitting}
         >
           Submit
         </button>
         <button
           type="button"
-          className="uk-button uk-button-default uk-button-large"
+          className="uk-button uk-button-default uk-button-large clear"
           disabled={this.props.pristine || this.props.submitting}
           onClick={this.resetForm}
           style={{ float: "right" }}
@@ -55,3 +65,4 @@ class UploadImageForm extends Component {
 }
 
 export default reduxForm({ form: "UploadImageForm" })(UploadImageForm);
+

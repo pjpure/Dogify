@@ -14,7 +14,14 @@ const ImagePreview = ({ imagefile }) =>
   ));
 
 ImagePreview.propTypes = {
-  imagefile: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string))
+  imagefile: PropTypes.arrayOf(
+    PropTypes.shape({
+      file: PropTypes.file,
+      name: PropTypes.string,
+      preview: PropTypes.string,
+      size: PropTypes.number
+    })
+  )
 };
 
 export default ImagePreview;

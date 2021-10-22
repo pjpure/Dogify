@@ -7,10 +7,10 @@ import "uikit/dist/css/uikit.min.css";
 import "./styles.css";
 
 render(
-  <div>
-    <Provider store={store}>
-      <UploadForm />
-    </Provider>
-  </div>,
+  <Provider store={store}>
+    <UploadForm />
+  </Provider>,
   document.getElementById("root")
 );
+
+
