@@ -169,7 +169,7 @@ class UploadImageForm extends Component {
         ) : (
           <Row>
             <Col xs={12} sm={2} md={3} xl={4}></Col>
-            <Col xs={12} sm={8} md={6} xl={4} className="app-container">
+            <Col xs={12} sm={8} md={6} xl={4}>
               <Field
                 name="imageToUpload"
                 component={DropZoneField}
