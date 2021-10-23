@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { MdCloudUpload } from "react-icons/md";
 
 const Placeholder = ({ getInputProps, getRootProps, error, touched }) => (
   <div
