@@ -48,7 +48,7 @@ class UploadImageForm extends Component {
                 imagefile={this.state.imageFile}
                 handleOnDrop={this.handleOnDrop}
               />
-              {this.state.result === "" ? (
+              {this.state.result === "" && this.state.selected !== "" ? (
                 <Button
                   variant="primary"
                   type="submit"
@@ -60,7 +60,13 @@ class UploadImageForm extends Component {
             </Col>
             {this.state.result === "" ? (
               <Col xs={12} sm={12} md={6} lg={4}>
-                <p style={{ fontSize: "50px", fontWeight: "600" }}>
+                <p
+                  style={{
+                    fontSize: "50px",
+                    fontWeight: "600",
+                    marginBottom: "30px",
+                  }}
+                >
                   Guess who am i ?
                 </p>
                 <Row>
