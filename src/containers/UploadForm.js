@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Field, reduxForm } from "redux-form";
 import DropZoneField from "../components/dropzoneField";
-import { Button, Row, Col, ProgressBar, Container } from "react-bootstrap";
+import { Button, Row, Col, ProgressBar } from "react-bootstrap";
 
 class UploadImageForm extends Component {
   state = {
@@ -16,7 +16,7 @@ class UploadImageForm extends Component {
     this.setState({ isLoading: true });
     let timeOutLoad = setInterval(() => {
       this.setState({ now: this.state.now + 5 });
-      if (this.state.now >= 95 && this.state.result != "") {
+      if (this.state.now >= 95 && this.state.result !== "") {
         clearInterval(this.state.timeOutLoad);
         this.setState({ isLoading: false });
       }
@@ -26,7 +26,7 @@ class UploadImageForm extends Component {
     const fd = new FormData();
     fd.append("imageFile", formProps.imageToUpload[0]);
     this.setState({ result: "Golden Retriever" });
-    if (this.state.now >= 95 && this.state.result != "") {
+    if (this.state.now >= 95 && this.state.result !== "") {
       clearInterval(this.state.timeOutLoad);
       this.setState({ isLoading: false });
     }
