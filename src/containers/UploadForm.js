@@ -178,7 +178,7 @@ class UploadImageForm extends Component {
                 handleOnDrop={this.handleOnDrop}
               />
             </Col>
-            <Col xs={1} sm={2} md={3} xl={4}></Col>
+            <Col xs={12} sm={2} md={3} xl={4}></Col>
           </Row>
         )}
       </Form>
