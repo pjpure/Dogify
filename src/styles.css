@@ -1,13 +1,17 @@
 img {
-  max-width: 350px;
-  max-height: 295px;
+  max-width: 450px;
+  max-height: 350px;
   margin: 0 auto;
   border-radius: 25px;
+}
+body {
+  overflow: hidden; /* Hide scrollbars */
 }
 
 .setBackground {
   background-color: #fcece4;
   height: 100vh;
+  font-family: "Rubik", sans-serif;
 }
 
 .app-container {
@@ -43,7 +47,7 @@ img {
 }
 
 .preview-container {
-  height: 335px;
+  height: 400px;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -59,6 +63,7 @@ img {
   border-radius: 25px;
   box-shadow: -9px 15px 10px #ffd6c9;
   font-family: "Rubik", sans-serif;
+  margin-top: 20px;
 }
 
 .upload-container {
@@ -67,7 +72,7 @@ img {
 }
 
 .border_pointer {
-  padding-bottom: 75px;
+  padding-bottom: 90px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 20px;
@@ -83,10 +88,10 @@ img {
   background-color: #ff8c5a !important;
   border-color: #ff8c5a !important;
   font-family: "Rubik", sans-serif;
-  font-size: 25px !important;
+  font-size: 35px !important;
   font-weight: 600 !important;
-  height: 45px !important;
-  width: 200px !important;
+  height: 55px !important;
+  width: 260px !important;
   line-height: 5px !important;
   border-radius: 25px !important;
 }
@@ -95,9 +100,9 @@ img {
   color: #ffffff;
   background-color: #ff8c5a;
   border-color: #ff8c5a;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-radius: 25px;
 }
 
@@ -109,10 +114,10 @@ img {
   background-color: #ffffff !important;
   border-color: #ffffff !important;
   font-family: "Rubik", sans-serif;
-  font-size: 25px !important;
-  font-weight: 600 !important;
-  height: 45px !important;
-  width: 200px !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  height: 40px !important;
+  width: 90px !important;
   line-height: 5px !important;
   border-radius: 25px !important;
 }

@@ -27,36 +27,22 @@ class UploadImageForm extends Component {
 
   render = () => (
     <div className="setBackground">
-      <div className="app-container">
-        <Form
-          style={{ paddingTop: "200px" }}
-          onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
-        >
-          {/* <Row>
-          <Col xs={6} className="app-container">
-            <Field
-              name="imageToUpload"
-              component={DropZoneField}
-              type="file"
-              imagefile={this.state.imageFile}
-              handleOnDrop={this.handleOnDrop}
-            />
-          </Col>
-          <Col xs={6}></Col>
-        </Row> */}
-          <Field
-            name="imageToUpload"
-            component={DropZoneField}
-            type="file"
-            imagefile={this.state.imageFile}
-            handleOnDrop={this.handleOnDrop}
-          />
-
-          {this.state.imageFile &&
-          this.state.imageFile.length > 0 &&
-          this.state.result == "" ? (
-            <Row style={{ textAlign: "center" }}>
-              <Col xs={12}>
+      <Form
+        style={{ paddingTop: "200px" }}
+        onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
+      >
+        {this.state.imageFile && this.state.imageFile.length > 0 ? (
+          <Row style={{ textAlign: "center" }}>
+            <Col xs={12} sm={12} md={12} lg={2}></Col>
+            <Col xs={12} sm={12} md={6} lg={4}>
+              <Field
+                name="imageToUpload"
+                component={DropZoneField}
+                type="file"
+                imagefile={this.state.imageFile}
+                handleOnDrop={this.handleOnDrop}
+              />
+              {this.state.result == "" ? (
                 <Button
                   variant="primary"
                   type="submit"
@@ -64,32 +50,79 @@ class UploadImageForm extends Component {
                 >
                   Let's Dogify
                 </Button>
+              ) : null}
+            </Col>
+            {this.state.result == "" ? (
+              <Col xs={12} sm={12} md={6} lg={4}>
+                <p style={{ fontSize: "50px", fontWeight: "600" }}>
+                  Guess who am i ?
+                </p>
               </Col>
-            </Row>
-          ) : null}
-          {this.state.result != "" ? (
-            <Row style={{ textAlign: "center" }}>
-              <Col xs={3}></Col>
-              <Col className="result" xs={6}>
-                {this.state.result}
-              </Col>
-              <Col xs={3}></Col>
-              <Col xs={12}></Col>
+            ) : (
+              <Col xs={12} sm={12} md={6} lg={4}>
+                <Row>
+                  <p
+                    style={{
+                      marginTop: "20px",
+                      fontSize: "50px",
+                      fontWeight: "600",
+                    }}
+                  >
+                    I am
+                  </p>
+                </Row>
+                <Row style={{ marginTop: "50px" }}>
+                  <Col xs={2}></Col>
+                  <Col className="result" xs={8}>
+                    {this.state.result}
+                  </Col>
+                  <Col xs={2}></Col>
 
-              <Col xs={12}>
-                <Button
-                  variant="secondary"
-                  disabled={this.props.pristine || this.props.submitting}
-                  onClick={this.resetForm}
-                >
-                  Back
-                </Button>
+                  <Col xs={12}>
+                    <Button
+                      style={{ marginLeft: "330px" }}
+                      variant="secondary"
+                      disabled={this.props.pristine || this.props.submitting}
+                      onClick={this.resetForm}
+                    >
+                      Back
+                    </Button>
+                  </Col>
+                </Row>
+                <Row style={{ marginTop: "50px" }}>
+                  <p
+                    style={{
+                      marginTop: "20px",
+                      fontSize: "50px",
+                      fontWeight: "600",
+                      color: "green",
+                    }}
+                  >
+                    Correct !
+                  </p>
+                </Row>
               </Col>
-            </Row>
-          ) : null}
-        </Form>
-        <div className="clear" />
-      </div>
+            )}
+
+            <Col xs={12} sm={12} md={12} lg={2}></Col>
+          </Row>
+        ) : (
+          <Row>
+            <Col xs={12} sm={2} md={3} xl={4}></Col>
+            <Col xs={12} sm={8} md={6} xl={4} className="app-container">
+              <Field
+                name="imageToUpload"
+                component={DropZoneField}
+                type="file"
+                imagefile={this.state.imageFile}
+                handleOnDrop={this.handleOnDrop}
+              />
+            </Col>
+            <Col xs={1} sm={2} md={3} xl={4}></Col>
+          </Row>
+        )}
+      </Form>
+      <div className="clear" />
     </div>
   );
 }
