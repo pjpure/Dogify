@@ -2,17 +2,14 @@ import React, { Component, useState } from "react";
 import { Form, Field, reduxForm } from "redux-form";
 import DropZoneField from "../components/dropzoneField";
 import { Button, Row, Col } from "react-bootstrap";
-const imageIsRequired = (value) => (!value ? "Required" : undefined);
 
 class UploadImageForm extends Component {
-  state = { imageFile: [] };
+  state = { imageFile: [], result: "" };
   handleFormSubmit = (formProps) => {
     const fd = new FormData();
-    fd.append("imageFile", formProps.imageToUpload.file);
-    // append any additional Redux form fields
-    // create an AJAX request here with the created formData
-    //alert(JSON.stringify(formProps, null, 4));
     console.log(fd);
+    this.setState({ result: "Golden Retriever" });
+    console.log(this.state.result);
   };
 
   handleOnDrop = (newImageFile, onChange) => {
@@ -25,29 +22,43 @@ class UploadImageForm extends Component {
     this.setState({ imageFile: [imageFile] }, () => onChange(imageFile));
   };
 
-  resetForm = () => this.setState({ imageFile: [] }, () => this.props.reset());
+  resetForm = () =>
+    this.setState({ imageFile: [], result: "" }, () => this.props.reset());
 
   render = () => (
     <div className="setBackground">
       <div className="app-container">
-        {/* <h1 className="title">Dogify</h1> */}
         <Form
           style={{ paddingTop: "200px" }}
           onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
         >
+          {/* <Row>
+          <Col xs={6} className="app-container">
+            <Field
+              name="imageToUpload"
+              component={DropZoneField}
+              type="file"
+              imagefile={this.state.imageFile}
+              handleOnDrop={this.handleOnDrop}
+            />
+          </Col>
+          <Col xs={6}></Col>
+        </Row> */}
           <Field
             name="imageToUpload"
             component={DropZoneField}
             type="file"
             imagefile={this.state.imageFile}
             handleOnDrop={this.handleOnDrop}
-            validate={[imageIsRequired]}
           />
-          {this.state.imageFile && this.state.imageFile.length > 0 ? (
+
+          {this.state.imageFile &&
+          this.state.imageFile.length > 0 &&
+          this.state.result == "" ? (
             <Row style={{ textAlign: "center" }}>
-              <Col>
+              <Col xs={12}>
                 <Button
-                  className="custom-btn"
+                  variant="primary"
                   type="submit"
                   disabled={this.props.submitting}
                 >
@@ -56,16 +67,26 @@ class UploadImageForm extends Component {
               </Col>
             </Row>
           ) : null}
+          {this.state.result != "" ? (
+            <Row style={{ textAlign: "center" }}>
+              <Col xs={3}></Col>
+              <Col className="result" xs={6}>
+                {this.state.result}
+              </Col>
+              <Col xs={3}></Col>
+              <Col xs={12}></Col>
 
-          {/* <Col>
-            <Button
-              disabled={this.props.pristine || this.props.submitting}
-              onClick={this.resetForm}
-              style={{ float: "left" }}
-            >
-              Clear
-            </Button>
-          </Col> */}
+              <Col xs={12}>
+                <Button
+                  variant="secondary"
+                  disabled={this.props.pristine || this.props.submitting}
+                  onClick={this.resetForm}
+                >
+                  Back
+                </Button>
+              </Col>
+            </Row>
+          ) : null}
         </Form>
         <div className="clear" />
       </div>
