@@ -62,13 +62,21 @@ class UploadImageForm extends Component {
   render = () => (
     <div className="setBackground">
       {this.state.isLoading ? (
-        <div className="load-bar">
+        <div>
           <Row>
             <Col xs={3} xl={4}></Col>
-            <Col xs={6} xl={4}>
+            <Col
+              xs={6}
+              xl={4}
+              style={{
+                marginTop: "40vh",
+                textAlign: "center",
+                fontSize: "30px",
+              }}
+            >
+              <p style={{ marginBottom: "20px" }}>{"Dogifying..."}</p>
               <ProgressBar
                 style={{
-                  marginTop: "40vh",
                   height: "45px",
                   backgroundColor: "#ffffff",
                   borderRadius: "25px",
