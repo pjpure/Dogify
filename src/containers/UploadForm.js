@@ -77,10 +77,9 @@ class UploadImageForm extends Component {
                     {this.state.result}
                   </Col>
                   <Col xs={2}></Col>
-
-                  <Col xs={12}>
+                  <Col xs={2}></Col>
+                  <Col xs={8} style={{ textAlign: "right" }}>
                     <Button
-                      style={{ marginLeft: "330px" }}
                       variant="secondary"
                       disabled={this.props.pristine || this.props.submitting}
                       onClick={this.resetForm}
@@ -88,6 +87,7 @@ class UploadImageForm extends Component {
                       Back
                     </Button>
                   </Col>
+                  <Col xs={2}></Col>
                 </Row>
                 <Row style={{ marginTop: "50px" }}>
                   <p
