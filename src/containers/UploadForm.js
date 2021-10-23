@@ -69,11 +69,16 @@ class UploadImageForm extends Component {
               xs={6}
               xl={4}
               style={{
-                marginTop: "40vh",
+                marginTop: "25vh",
                 textAlign: "center",
                 fontSize: "30px",
               }}
             >
+              <img
+                src="dog_swim.gif"
+                alt="dog"
+                style={{ width: "150px", height: "150px" }}
+              />
               <p style={{ marginBottom: "20px" }}>{"Dogifying..."}</p>
               <ProgressBar
                 style={{
