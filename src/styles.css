@@ -174,3 +174,10 @@ html {
   border-color: transparent !important;
   box-shadow: none !important;
 }
+
+.progress-bar {
+  background-color: #ff8c5a !important;
+}
+
+.load-bar {
+}

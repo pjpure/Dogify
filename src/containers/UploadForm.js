@@ -1,15 +1,35 @@
 import React, { Component } from "react";
 import { Form, Field, reduxForm } from "redux-form";
 import DropZoneField from "../components/dropzoneField";
-import { Button, Row, Col } from "react-bootstrap";
+import { Button, Row, Col, ProgressBar, Container } from "react-bootstrap";
 
 class UploadImageForm extends Component {
-  state = { imageFile: [], result: "", selected: "" };
+  state = {
+    imageFile: [],
+    result: "",
+    selected: "",
+    isLoading: false,
+    now: 0,
+    timeOutLoad: 0,
+  };
   handleFormSubmit = (formProps) => {
+    this.setState({ isLoading: true });
+    let timeOutLoad = setInterval(() => {
+      this.setState({ now: this.state.now + 5 });
+      if (this.state.now >= 95 && this.state.result != "") {
+        clearInterval(this.state.timeOutLoad);
+        this.setState({ isLoading: false });
+      }
+    }, 150);
+    this.setState({ timeOutLoad: timeOutLoad });
+
     const fd = new FormData();
-    console.log(fd);
+    fd.append("imageFile", formProps.imageToUpload[0]);
     this.setState({ result: "Golden Retriever" });
-    console.log(this.state.result);
+    if (this.state.now >= 95 && this.state.result != "") {
+      clearInterval(this.state.timeOutLoad);
+      this.setState({ isLoading: false });
+    }
   };
 
   handleOnDrop = (newImageFile, onChange) => {
@@ -27,167 +47,197 @@ class UploadImageForm extends Component {
   };
 
   resetForm = () =>
-    this.setState({ imageFile: [], result: "", selected: "" }, () =>
-      this.props.reset()
+    this.setState(
+      {
+        imageFile: [],
+        result: "",
+        selected: "",
+        isLoading: false,
+        now: 0,
+        timeOutLoad: 0,
+      },
+      () => this.props.reset()
     );
 
   render = () => (
     <div className="setBackground">
-      <Form
-        style={{ paddingTop: "200px" }}
-        onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
-      >
-        {this.state.imageFile && this.state.imageFile.length > 0 ? (
-          <Row style={{ textAlign: "center" }}>
-            <Col xs={12} sm={12} md={12} lg={2}></Col>
-            <Col xs={12} sm={12} md={6} lg={4}>
-              <Field
-                name="imageToUpload"
-                component={DropZoneField}
-                type="file"
-                imagefile={this.state.imageFile}
-                handleOnDrop={this.handleOnDrop}
+      {this.state.isLoading ? (
+        <div className="load-bar">
+          <Row>
+            <Col xs={3} xl={4}></Col>
+            <Col xs={6} xl={4}>
+              <ProgressBar
+                style={{
+                  marginTop: "40vh",
+                  height: "45px",
+                  backgroundColor: "#ffffff",
+                  borderRadius: "25px",
+                  border: "7px solid #ffffff",
+                }}
+                now={this.state.now}
               />
-              {this.state.result === "" && this.state.selected !== "" ? (
-                <Button
-                  variant="primary"
-                  type="submit"
-                  disabled={this.props.submitting}
-                >
-                  Let's Dogify
-                </Button>
-              ) : null}
             </Col>
-            {this.state.result === "" ? (
+            <Col xs={3} xl={4}></Col>
+          </Row>
+        </div>
+      ) : (
+        <Form
+          style={{ paddingTop: "200px" }}
+          onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
+        >
+          {this.state.imageFile && this.state.imageFile.length > 0 ? (
+            <Row style={{ textAlign: "center" }}>
+              <Col xs={12} sm={12} md={12} lg={2}></Col>
               <Col xs={12} sm={12} md={6} lg={4}>
-                <p
-                  style={{
-                    fontSize: "50px",
-                    fontWeight: "600",
-                    marginBottom: "30px",
-                  }}
-                >
-                  Guess who am i ?
-                </p>
-                <Row>
-                  <Col xs={12}>
-                    {this.state.selected === "Golden Retriever" ? (
-                      <Button variant="warning">Golden Retriever</Button>
-                    ) : (
-                      <Button
-                        name="Golden Retriever"
-                        onClick={this.selectOnClick}
-                        variant="outline-warning"
-                      >
-                        Golden Retriever
-                      </Button>
-                    )}
-                  </Col>
-                  <Col xs={12}>
-                    {this.state.selected === "Labrador Retriever" ? (
-                      <Button variant="warning">Labrador Retriever</Button>
-                    ) : (
-                      <Button
-                        name="Labrador Retriever"
-                        onClick={this.selectOnClick}
-                        variant="outline-warning"
-                      >
-                        Labrador Retriever
-                      </Button>
-                    )}
-                  </Col>
-                  <Col xs={12}>
-                    {this.state.selected === "Kuvasz" ? (
-                      <Button variant="warning">Kuvasz</Button>
-                    ) : (
-                      <Button
-                        name="Kuvasz"
-                        onClick={this.selectOnClick}
-                        variant="outline-warning"
-                      >
-                        Kuvasz
-                      </Button>
-                    )}
-                  </Col>
-                </Row>
+                <Field
+                  name="imageToUpload"
+                  component={DropZoneField}
+                  type="file"
+                  imagefile={this.state.imageFile}
+                  handleOnDrop={this.handleOnDrop}
+                />
+                {this.state.result === "" && this.state.selected !== "" ? (
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    disabled={this.props.submitting}
+                  >
+                    Let's Dogify
+                  </Button>
+                ) : null}
               </Col>
-            ) : (
-              <Col xs={12} sm={12} md={6} lg={4}>
-                <Row>
+              {this.state.result === "" ? (
+                <Col xs={12} sm={12} md={6} lg={4}>
                   <p
                     style={{
-                      marginTop: "20px",
                       fontSize: "50px",
                       fontWeight: "600",
+                      marginBottom: "30px",
                     }}
                   >
-                    I am
+                    Guess who am i ?
                   </p>
-                </Row>
-                <Row style={{ marginTop: "50px" }}>
-                  <Col xs={2}></Col>
-                  <Col className="result" xs={8}>
-                    {this.state.result}
-                  </Col>
-                  <Col xs={2}></Col>
-                  <Col xs={2}></Col>
-                  <Col xs={8} style={{ textAlign: "right" }}>
-                    <Button
-                      variant="secondary"
-                      disabled={this.props.pristine || this.props.submitting}
-                      onClick={this.resetForm}
-                    >
-                      Back
-                    </Button>
-                  </Col>
-                  <Col xs={2}></Col>
-                </Row>
-                <Row style={{ marginTop: "50px" }}>
-                  {this.state.result === this.state.selected ? (
+                  <Row>
+                    <Col xs={12}>
+                      {this.state.selected === "Golden Retriever" ? (
+                        <Button variant="warning">Golden Retriever</Button>
+                      ) : (
+                        <Button
+                          name="Golden Retriever"
+                          onClick={this.selectOnClick}
+                          variant="outline-warning"
+                        >
+                          Golden Retriever
+                        </Button>
+                      )}
+                    </Col>
+                    <Col xs={12}>
+                      {this.state.selected === "Labrador Retriever" ? (
+                        <Button variant="warning">Labrador Retriever</Button>
+                      ) : (
+                        <Button
+                          name="Labrador Retriever"
+                          onClick={this.selectOnClick}
+                          variant="outline-warning"
+                        >
+                          Labrador Retriever
+                        </Button>
+                      )}
+                    </Col>
+                    <Col xs={12}>
+                      {this.state.selected === "Kuvasz" ? (
+                        <Button variant="warning">Kuvasz</Button>
+                      ) : (
+                        <Button
+                          name="Kuvasz"
+                          onClick={this.selectOnClick}
+                          variant="outline-warning"
+                        >
+                          Kuvasz
+                        </Button>
+                      )}
+                    </Col>
+                  </Row>
+                </Col>
+              ) : (
+                <Col xs={12} sm={12} md={6} lg={4}>
+                  <Row>
                     <p
                       style={{
                         marginTop: "20px",
                         fontSize: "50px",
                         fontWeight: "600",
-                        color: "green",
                       }}
                     >
-                      Correct !
+                      I am
                     </p>
-                  ) : (
-                    <p
-                      style={{
-                        marginTop: "20px",
-                        fontSize: "50px",
-                        fontWeight: "600",
-                        color: "red",
-                      }}
-                    >
-                      In Correct !
-                    </p>
-                  )}
-                </Row>
-              </Col>
-            )}
+                  </Row>
+                  <Row style={{ marginTop: "50px" }}>
+                    <Col xs={2}></Col>
+                    <Col className="result" xs={8}>
+                      {this.state.result}
+                    </Col>
+                    <Col xs={2}></Col>
+                    <Col xs={2}></Col>
+                    <Col xs={8} style={{ textAlign: "right" }}>
+                      <Button
+                        variant="secondary"
+                        disabled={this.props.pristine || this.props.submitting}
+                        onClick={this.resetForm}
+                      >
+                        Back
+                      </Button>
+                    </Col>
+                    <Col xs={2}></Col>
+                  </Row>
+                  <Row style={{ marginTop: "50px" }}>
+                    {this.state.result === this.state.selected ? (
+                      <p
+                        style={{
+                          marginTop: "20px",
+                          fontSize: "50px",
+                          fontWeight: "600",
+                          color: "green",
+                        }}
+                      >
+                        Correct !
+                      </p>
+                    ) : (
+                      <p
+                        style={{
+                          marginTop: "20px",
+                          fontSize: "50px",
+                          fontWeight: "600",
+                          color: "red",
+                        }}
+                      >
+                        In Correct !
+                      </p>
+                    )}
+                  </Row>
+                </Col>
+              )}
 
-            <Col xs={12} sm={12} md={12} lg={2}></Col>
-          </Row>
-        ) : (
-          <Row>
-            <Col xs={12} sm={2} md={3} xl={4}></Col>
-            <Col xs={12} sm={8} md={6} xl={4}>
-              <Field
-                name="imageToUpload"
-                component={DropZoneField}
-                type="file"
-                imagefile={this.state.imageFile}
-                handleOnDrop={this.handleOnDrop}
-              />
-            </Col>
-            <Col xs={12} sm={2} md={3} xl={4}></Col>
-          </Row>
-        )}
-      </Form>
+              <Col xs={12} sm={12} md={12} lg={2}></Col>
+            </Row>
+          ) : (
+            <Row>
+              <Col xs={12} sm={2} md={3} xl={4}></Col>
+              <Col xs={12} sm={8} md={6} xl={4}>
+                <Field
+                  name="imageToUpload"
+                  component={DropZoneField}
+                  type="file"
+                  imagefile={this.state.imageFile}
+                  handleOnDrop={this.handleOnDrop}
+                />
+              </Col>
+              <Col xs={12} sm={2} md={3} xl={4}></Col>
+            </Row>
+          )}
+        </Form>
+      )}
+
       <div className="clear" />
     </div>
   );
