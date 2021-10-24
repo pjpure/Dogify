@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Field, reduxForm } from "redux-form";
 import DropZoneField from "../components/dropzoneField";
 import { Button, Row, Col, ProgressBar } from "react-bootstrap";
-
+import axios from "axios";
 class UploadImageForm extends Component {
   state = {
     imageFile: [],
@@ -16,20 +16,27 @@ class UploadImageForm extends Component {
     this.setState({ isLoading: true });
     let timeOutLoad = setInterval(() => {
       this.setState({ now: this.state.now + 5 });
-      if (this.state.now >= 95 && this.state.result !== "") {
+      if (this.state.now >= 95) {
         clearInterval(this.state.timeOutLoad);
-        this.setState({ isLoading: false });
+        if (this.state.result !== "") {
+          this.setState({ isLoading: false });
+        }
       }
     }, 150);
     this.setState({ timeOutLoad: timeOutLoad });
-
-    const fd = new FormData();
-    fd.append("imageFile", formProps.imageToUpload[0]);
-    this.setState({ result: "Golden Retriever" });
-    if (this.state.now >= 95 && this.state.result !== "") {
-      clearInterval(this.state.timeOutLoad);
-      this.setState({ isLoading: false });
-    }
+    const data = new FormData();
+    data.append("file", this.state.imageFile[0]["file"]);
+    data.append("filename", this.state.imageFile[0]["fname"]);
+    axios
+      .post("https://dogify-backend.herokuapp.com/predict", data)
+      .then((response) => {
+        console.log(response.data.result);
+        this.setState({ result: response.data.result });
+        if (this.state.now >= 95 && this.state.result !== "") {
+          clearInterval(this.state.timeOutLoad);
+          this.setState({ isLoading: false });
+        }
+      });
   };
 
   handleOnDrop = (newImageFile, onChange) => {
