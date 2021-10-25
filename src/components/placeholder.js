@@ -6,11 +6,10 @@ const Placeholder = ({ getInputProps, getRootProps, error, touched }) => (
     {...getRootProps()}
     className={`placeholder-preview ${error && touched ? "has-error" : ""}`}
   >
-    <p style={{ lineHeight: "0px", color: "white" }}> :</p>
     <div className="border_pointer">
       <input {...getInputProps()} />
       {/* <MdCloudUpload style={{ fontSize: 50, paddingTop: 40 }} /> */}
-      <h3 style={{ lineHeight: "10pt", marginTop: "8vh" }}>Drag & drop your</h3>
+      <h3 style={{ lineHeight: "10pt", marginTop: "15%" }}>Drag & drop your</h3>
       <h3 style={{ lineHeight: "25pt" }}>
         <strong style={{ color: "#ff8c5a" }}>Dog image</strong> to{" "}
         <strong style={{ color: "#ff8c5a" }}>Dogify</strong>
