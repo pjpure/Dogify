@@ -10,15 +10,13 @@ const Placeholder = ({ getInputProps, getRootProps, error, touched }) => (
     <div className="border_pointer">
       <input {...getInputProps()} />
       {/* <MdCloudUpload style={{ fontSize: 50, paddingTop: 40 }} /> */}
-      <p style={{ fontSize: "30px", lineHeight: "10pt", marginTop: "100px" }}>
-        Drag & drop your
-      </p>
-      <p style={{ fontSize: "30px", lineHeight: "15pt" }}>
+      <h3 style={{ lineHeight: "10pt", marginTop: "8vh" }}>Drag & drop your</h3>
+      <h3 style={{ lineHeight: "25pt" }}>
         <strong style={{ color: "#ff8c5a" }}>Dog image</strong> to{" "}
         <strong style={{ color: "#ff8c5a" }}>Dogify</strong>
-      </p>
-      <p style={{ fontSize: "30px", lineHeight: "15pt" }}>the dog breed</p>
-      <p style={{ fontSize: "18px", lineHeight: "30pt" }}>
+      </h3>
+      <h3 style={{ lineHeight: "15pt" }}>the dog breed</h3>
+      <p style={{ marginTop: "5vh" }}>
         or{" "}
         <u style={{ color: "#ff8c5a" }}>
           <strong>browse file</strong>

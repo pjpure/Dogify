@@ -14,7 +14,6 @@ const DropZoneField = ({
   <div className="preview-container">
     <DropZone
       accept="image/jpeg, image/png"
-      className="upload-container"
       onDrop={(file) => handleOnDrop(file, onChange)}
       multiple={false}
     >

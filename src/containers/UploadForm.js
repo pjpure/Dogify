@@ -102,8 +102,8 @@ class UploadImageForm extends Component {
         </div>
       ) : (
         <Form
-          style={{ paddingTop: "200px" }}
           onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
+          style={{ marginTop: "22vh" }}
         >
           {this.state.imageFile && this.state.imageFile.length > 0 ? (
             <Row style={{ textAlign: "center" }}>
@@ -130,9 +130,10 @@ class UploadImageForm extends Component {
                 <Col xs={12} sm={12} md={6} lg={4}>
                   <p
                     style={{
-                      fontSize: "50px",
+                      fontSize: "45px",
                       fontWeight: "600",
-                      marginBottom: "30px",
+                      lineHeight: "2.5vh",
+                      marginTop: "2vh",
                     }}
                   >
                     Guess who am i ?
@@ -184,15 +185,15 @@ class UploadImageForm extends Component {
                   <Row>
                     <p
                       style={{
-                        marginTop: "20px",
-                        fontSize: "50px",
+                        fontSize: "45px",
                         fontWeight: "600",
+                        lineHeight: "5vh",
                       }}
                     >
                       I am
                     </p>
                   </Row>
-                  <Row style={{ marginTop: "50px" }}>
+                  <Row style={{ marginTop: "6vh" }}>
                     <Col xs={2}></Col>
                     <Col className="result" xs={8}>
                       {this.state.result}
@@ -210,12 +211,11 @@ class UploadImageForm extends Component {
                     </Col>
                     <Col xs={2}></Col>
                   </Row>
-                  <Row style={{ marginTop: "50px" }}>
+                  <Row style={{ marginTop: "6vh" }}>
                     {this.state.result === this.state.selected ? (
                       <p
                         style={{
-                          marginTop: "20px",
-                          fontSize: "50px",
+                          fontSize: "45px",
                           fontWeight: "600",
                           color: "green",
                         }}
@@ -225,8 +225,7 @@ class UploadImageForm extends Component {
                     ) : (
                       <p
                         style={{
-                          marginTop: "20px",
-                          fontSize: "50px",
+                          fontSize: "45px",
                           fontWeight: "600",
                           color: "red",
                         }}
@@ -242,8 +241,8 @@ class UploadImageForm extends Component {
             </Row>
           ) : (
             <Row>
-              <Col xs={12} sm={2} md={3} xl={4}></Col>
-              <Col xs={12} sm={8} md={6} xl={4}>
+              <Col xs={12} sm={2} md={2} xl={4}></Col>
+              <Col xs={12} sm={8} md={8} xl={4}>
                 <Field
                   name="imageToUpload"
                   component={DropZoneField}
@@ -252,7 +251,7 @@ class UploadImageForm extends Component {
                   handleOnDrop={this.handleOnDrop}
                 />
               </Col>
-              <Col xs={12} sm={2} md={3} xl={4}></Col>
+              <Col xs={12} sm={2} md={2} xl={4}></Col>
             </Row>
           )}
         </Form>
