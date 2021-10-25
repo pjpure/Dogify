@@ -1,6 +1,4 @@
 img {
-  max-width: 450px;
-  max-height: 350px;
   margin: 0 auto;
   border-radius: 25px;
   width: 100%;
@@ -72,7 +70,7 @@ html {
   box-shadow: -9px 15px 10px #ffd6c9;
   font-family: "Rubik", sans-serif;
   min-height: 300px;
-  max-height: 400px;
+  max-height: 45vh;
   padding: 20px;
 }
 

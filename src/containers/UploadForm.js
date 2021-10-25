@@ -103,7 +103,7 @@ class UploadImageForm extends Component {
       ) : (
         <Form
           onSubmit={this.props.handleSubmit(this.handleFormSubmit)}
-          style={{ marginTop: "22vh" }}
+          style={{ marginTop: "20vh" }}
         >
           {this.state.imageFile && this.state.imageFile.length > 0 ? (
             <Row style={{ textAlign: "center" }}>
