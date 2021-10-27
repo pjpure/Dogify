@@ -86,7 +86,7 @@ class UploadImageForm extends Component {
                 alt="dog"
                 style={{ width: "150px", height: "150px" }}
               />
-              <p style={{ marginBottom: "20px" }}>{"Dogifying..."}</p>
+              <h3 style={{ marginBottom: "20px" }}>{"Dogifying..."}</h3>
               <ProgressBar
                 style={{
                   height: "45px",
@@ -128,16 +128,15 @@ class UploadImageForm extends Component {
               </Col>
               {this.state.result === "" ? (
                 <Col xs={12} sm={12} md={6} lg={4}>
-                  <p
+                  <h1
                     style={{
-                      fontSize: "45px",
                       fontWeight: "600",
                       lineHeight: "2.5vh",
                       marginTop: "2vh",
                     }}
                   >
                     Guess who am i ?
-                  </p>
+                  </h1>
                   <Row>
                     <Col xs={12}>
                       {this.state.selected === "Golden Retriever" ? (
@@ -183,7 +182,7 @@ class UploadImageForm extends Component {
               ) : (
                 <Col xs={12} sm={12} md={6} lg={4}>
                   <Row>
-                    <p
+                    <h1
                       style={{
                         fontSize: "45px",
                         fontWeight: "600",
@@ -191,7 +190,7 @@ class UploadImageForm extends Component {
                       }}
                     >
                       I am
-                    </p>
+                    </h1>
                   </Row>
                   <Row style={{ marginTop: "6vh" }}>
                     <Col xs={2}></Col>
@@ -213,7 +212,7 @@ class UploadImageForm extends Component {
                   </Row>
                   <Row style={{ marginTop: "6vh" }}>
                     {this.state.result === this.state.selected ? (
-                      <p
+                      <h1
                         style={{
                           fontSize: "45px",
                           fontWeight: "600",
@@ -221,9 +220,9 @@ class UploadImageForm extends Component {
                         }}
                       >
                         Correct !
-                      </p>
+                      </h1>
                     ) : (
-                      <p
+                      <h1
                         style={{
                           fontSize: "45px",
                           fontWeight: "600",
@@ -231,7 +230,7 @@ class UploadImageForm extends Component {
                         }}
                       >
                         In Correct !
-                      </p>
+                      </h1>
                     )}
                   </Row>
                 </Col>

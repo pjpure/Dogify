@@ -95,7 +95,7 @@ html {
   color: #ffffff;
   background-color: #ff8c5a;
   border-color: #ff8c5a;
-  font-size: 33px;
+  font-size: 32px;
   font-weight: 600;
   margin-bottom: 10px;
   border-radius: 25px;
@@ -109,9 +109,9 @@ html {
   background-color: #ff8c5a !important;
   border-color: #ff8c5a !important;
   font-family: "Rubik", sans-serif;
-  font-size: 33px !important;
+  font-size: 32px !important;
   font-weight: 600 !important;
-  height: 55px !important;
+  height: 50px !important;
   width: 260px !important;
   line-height: 5px !important;
   border-radius: 25px !important;
@@ -141,10 +141,10 @@ html {
   background-color: #ffffff !important;
   border-color: #ffffff !important;
   font-family: "Rubik", sans-serif;
-  font-size: 23px !important;
+  font-size: 22px !important;
   font-weight: 500 !important;
   height: 45px !important;
-  width: 330px !important;
+  width: 300px !important;
   line-height: 5px !important;
   border-radius: 25px !important;
   margin-top: 4.5vh;
@@ -164,7 +164,7 @@ html {
   font-size: 23px !important;
   font-weight: 500 !important;
   height: 45px !important;
-  width: 330px !important;
+  width: 300px !important;
   line-height: 5px !important;
   border-radius: 25px !important;
   margin-top: 4.5vh;
@@ -175,4 +175,182 @@ html {
 
 .progress-bar {
   background-color: #ff8c5a !important;
+}
+
+h1 {
+  font-size: 50px !important;
+}
+
+h3 {
+  font-size: 30px !important;
+}
+
+p {
+  font-size: 16px !important;
+}
+@media screen and (max-width: 1280px) {
+  h1 {
+    font-size: 40px !important;
+  }
+  h3 {
+    font-size: 25px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    color: #ffffff !important;
+    background-color: #ff8c5a !important;
+    border-color: #ff8c5a !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    height: 45px !important;
+    width: 250px !important;
+    line-height: 5px !important;
+    border-radius: 25px !important;
+    margin-bottom: 25px;
+  }
+  .result {
+    font-family: "Rubik", sans-serif;
+    color: #ffffff;
+    background-color: #ff8c5a;
+    border-color: #ff8c5a;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-radius: 25px;
+  }
+  .btn-secondary,
+  .btn-secondary:hover,
+  .btn-secondary:active,
+  .btn-secondary:visited {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    height: 35px !important;
+    width: 80px !important;
+    line-height: 5px !important;
+    border-radius: 25px !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  h1 {
+    font-size: 37px !important;
+  }
+  h3 {
+    font-size: 25px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited {
+    color: #ffffff !important;
+    background-color: #ff8c5a !important;
+    border-color: #ff8c5a !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    height: 45px !important;
+    width: 250px !important;
+    line-height: 5px !important;
+    border-radius: 25px !important;
+    margin-bottom: 25px;
+  }
+  .result {
+    font-family: "Rubik", sans-serif;
+    color: #ffffff;
+    background-color: #ff8c5a;
+    border-color: #ff8c5a;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-radius: 25px;
+  }
+  .btn-secondary,
+  .btn-secondary:hover,
+  .btn-secondary:active,
+  .btn-secondary:visited {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    height: 30px !important;
+    width: 70px !important;
+    line-height: 5px !important;
+    border-radius: 25px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 35px !important;
+  }
+  h3 {
+    font-size: 20px !important;
+  }
+  p {
+    font-size: 12px !important;
+  }
+  .result {
+    font-family: "Rubik", sans-serif;
+    color: #ffffff;
+    background-color: #ff8c5a;
+    border-color: #ff8c5a;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-radius: 25px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  h1 {
+    font-size: 30px !important;
+  }
+  h3 {
+    font-size: 18px !important;
+  }
+  p {
+    font-size: 10px !important;
+  }
+  .result {
+    font-family: "Rubik", sans-serif;
+    color: #ffffff;
+    background-color: #ff8c5a;
+    border-color: #ff8c5a;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-radius: 25px;
+  }
+  .btn-secondary,
+  .btn-secondary:hover,
+  .btn-secondary:active,
+  .btn-secondary:visited {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    font-family: "Rubik", sans-serif;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    height: 25px !important;
+    width: 60px !important;
+    line-height: 5px !important;
+    border-radius: 25px !important;
+  }
 }
