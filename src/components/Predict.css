@@ -1,0 +1,14 @@
+.correctText {
+  font-weight: 700;
+}
+.inCorrectText {
+  font-weight: 400;
+}
+
+.correctNum {
+  font-weight: 700;
+  font-size: 19pt;
+}
+.inCorrectNum {
+  font-weight: 400;
+}

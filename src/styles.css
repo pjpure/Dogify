@@ -1,184 +1,9 @@
-img {
-  margin: 0 auto;
-  border-radius: 25px;
-  width: 100%;
-  height: 100%;
-}
-
 body {
   overflow-x: hidden;
 }
-html {
-  background-color: #fcece4;
-  height: 100%;
-  width: 100%;
-  min-height: 100%;
-  min-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.setBackground {
-  background-color: #fcece4;
-  font-family: "Rubik", sans-serif;
-}
-
-.app-container {
-  width: 500px;
-  margin: auto;
-}
-
-.clear {
-  clear: both;
-}
-
-.details,
-.title {
-  text-align: center;
-}
-
-.error {
-  margin-top: 4px;
-  color: red;
-}
-
-.has-error {
-  border: 1px dotted red;
-}
-
-.image-container {
-  align-items: center;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-
-.preview-container {
-  width: 100%;
-  margin-bottom: 2vh;
-}
-
-.placeholder-preview,
-.render-preview {
-  align-items: center;
-  text-align: center;
-  background-color: #ffffff;
-  height: 40vh;
-  width: 80%;
-  margin-left: 10%;
-  border-radius: 25px;
-  box-shadow: -9px 15px 10px #ffd6c9;
-  font-family: "Rubik", sans-serif;
-  min-height: 300px;
-  max-height: 45vh;
-  padding: 20px;
-}
-
-.upload-container {
-  cursor: pointer;
-}
-
-.border_pointer {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  border: 3px dashed gray;
-  border-radius: 25px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.result {
-  font-family: "Rubik", sans-serif;
-  color: #ffffff;
-  background-color: #ff8c5a;
-  border-color: #ff8c5a;
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 10px;
-  border-radius: 25px;
-}
-
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited {
-  color: #ffffff !important;
-  background-color: #ff8c5a !important;
-  border-color: #ff8c5a !important;
-  font-family: "Rubik", sans-serif;
-  font-size: 32px !important;
-  font-weight: 600 !important;
-  height: 50px !important;
-  width: 260px !important;
-  line-height: 5px !important;
-  border-radius: 25px !important;
-}
-
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:active,
-.btn-secondary:visited {
-  color: #000000 !important;
-  background-color: #ffffff !important;
-  border-color: #ffffff !important;
-  font-family: "Rubik", sans-serif;
-  font-size: 20px !important;
-  font-weight: 500 !important;
-  height: 40px !important;
-  width: 90px !important;
-  line-height: 5px !important;
-  border-radius: 25px !important;
-}
-
-.btn-outline-warning,
-.btn-outline-warning:hover,
-.btn-outline-warning:active,
-.btn-outline-warning:visited {
-  color: #000000 !important;
-  background-color: #ffffff !important;
-  border-color: #ffffff !important;
-  font-family: "Rubik", sans-serif;
-  font-size: 22px !important;
-  font-weight: 500 !important;
-  height: 45px !important;
-  width: 300px !important;
-  line-height: 5px !important;
-  border-radius: 25px !important;
-  margin-top: 4.5vh;
-  outline: none !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.btn-warning,
-.btn-warning:hover,
-.btn-warning:active,
-.btn-warning:visited {
-  color: #000000 !important;
-  background-color: #fab395 !important;
-  border-color: #fab395 !important;
-  font-family: "Rubik", sans-serif;
-  font-size: 23px !important;
-  font-weight: 500 !important;
-  height: 45px !important;
-  width: 300px !important;
-  line-height: 5px !important;
-  border-radius: 25px !important;
-  margin-top: 4.5vh;
-  outline: none !important;
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.progress-bar {
-  background-color: #ff8c5a !important;
-}
 
 h1 {
-  font-size: 50px !important;
+  font-size: 64px !important;
 }
 
 h3 {
@@ -190,7 +15,7 @@ p {
 }
 @media screen and (max-width: 1280px) {
   h1 {
-    font-size: 40px !important;
+    font-size: 54px !important;
   }
   h3 {
     font-size: 25px !important;
@@ -198,123 +23,31 @@ p {
 
   p {
     font-size: 14px !important;
-  }
-  .btn-primary,
-  .btn-primary:hover,
-  .btn-primary:active,
-  .btn-primary:visited {
-    color: #ffffff !important;
-    background-color: #ff8c5a !important;
-    border-color: #ff8c5a !important;
-    font-family: "Rubik", sans-serif;
-    font-size: 28px !important;
-    font-weight: 600 !important;
-    height: 45px !important;
-    width: 250px !important;
-    line-height: 5px !important;
-    border-radius: 25px !important;
-    margin-bottom: 25px;
-  }
-  .result {
-    font-family: "Rubik", sans-serif;
-    color: #ffffff;
-    background-color: #ff8c5a;
-    border-color: #ff8c5a;
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    border-radius: 25px;
-  }
-  .btn-secondary,
-  .btn-secondary:hover,
-  .btn-secondary:active,
-  .btn-secondary:visited {
-    color: #000000 !important;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-    font-family: "Rubik", sans-serif;
-    font-size: 18px !important;
-    font-weight: 500 !important;
-    height: 35px !important;
-    width: 80px !important;
-    line-height: 5px !important;
-    border-radius: 25px !important;
   }
 }
 
 @media screen and (max-width: 1024px) {
   h1 {
-    font-size: 37px !important;
+    font-size: 46px !important;
   }
   h3 {
-    font-size: 25px !important;
+    font-size: 23px !important;
   }
 
   p {
     font-size: 14px !important;
   }
-  .btn-primary,
-  .btn-primary:hover,
-  .btn-primary:active,
-  .btn-primary:visited {
-    color: #ffffff !important;
-    background-color: #ff8c5a !important;
-    border-color: #ff8c5a !important;
-    font-family: "Rubik", sans-serif;
-    font-size: 28px !important;
-    font-weight: 600 !important;
-    height: 45px !important;
-    width: 250px !important;
-    line-height: 5px !important;
-    border-radius: 25px !important;
-    margin-bottom: 25px;
-  }
-  .result {
-    font-family: "Rubik", sans-serif;
-    color: #ffffff;
-    background-color: #ff8c5a;
-    border-color: #ff8c5a;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    border-radius: 25px;
-  }
-  .btn-secondary,
-  .btn-secondary:hover,
-  .btn-secondary:active,
-  .btn-secondary:visited {
-    color: #000000 !important;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-    font-family: "Rubik", sans-serif;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    height: 30px !important;
-    width: 70px !important;
-    line-height: 5px !important;
-    border-radius: 25px !important;
-  }
 }
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 35px !important;
+    font-size: 39px !important;
   }
   h3 {
     font-size: 20px !important;
   }
   p {
     font-size: 12px !important;
-  }
-  .result {
-    font-family: "Rubik", sans-serif;
-    color: #ffffff;
-    background-color: #ff8c5a;
-    border-color: #ff8c5a;
-    font-size: 23px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    border-radius: 25px;
   }
 }
 
@@ -327,30 +60,5 @@ p {
   }
   p {
     font-size: 10px !important;
-  }
-  .result {
-    font-family: "Rubik", sans-serif;
-    color: #ffffff;
-    background-color: #ff8c5a;
-    border-color: #ff8c5a;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    border-radius: 25px;
-  }
-  .btn-secondary,
-  .btn-secondary:hover,
-  .btn-secondary:active,
-  .btn-secondary:visited {
-    color: #000000 !important;
-    background-color: #ffffff !important;
-    border-color: #ffffff !important;
-    font-family: "Rubik", sans-serif;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    height: 25px !important;
-    width: 60px !important;
-    line-height: 5px !important;
-    border-radius: 25px !important;
   }
 }

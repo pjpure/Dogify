@@ -1,0 +1,125 @@
+html {
+  background-color: #fcece4;
+}
+.setBackground {
+  background-color: #fcece4;
+  font-family: "Rubik", sans-serif;
+  height: 100%;
+  min-height: 100vh;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dropField {
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.resultPage {
+  text-align: center;
+  width: 90%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+.comleft {
+  padding-right: 2vw;
+}
+.comright {
+  padding-left: 2vw;
+}
+
+img {
+  margin: 0 auto;
+  border-radius: 25px;
+  width: 100%;
+  height: auto;
+  max-height: 64vh;
+}
+.result {
+  font-family: "Rubik", sans-serif;
+  color: #ffffff;
+  background-color: #ff8c5a;
+  border-color: #ff8c5a;
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 20px;
+  border-radius: 25px;
+}
+.placeholder-preview,
+.render-preview {
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  box-shadow: -9px 15px 10px #ffd6c9;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+.upload-container {
+  cursor: pointer;
+}
+.border_pointer {
+  width: 100%;
+  height: 45vh;
+  margin: auto;
+  border: 3px dashed gray;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.progress-bar {
+  background-color: #ff8c5a !important;
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  color: #ffffff !important;
+  background-color: #ff8c5a !important;
+  border-color: #ff8c5a !important;
+  font-family: "Rubik", sans-serif;
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  height: 54px !important;
+  width: 260px !important;
+  line-height: 5px !important;
+  border-radius: 25px !important;
+}
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:visited {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  height: 40px !important;
+  width: 100px !important;
+  line-height: 5px !important;
+  border-radius: 20px !important;
+  margin-top: 23px;
+}
+
+@media screen and (max-width: 992px) {
+  .resultPage {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 80px;
+  }
+  .comleft {
+    padding-right: 0px;
+  }
+  .comleft {
+    padding-left: 0px;
+  }
+}
