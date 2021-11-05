@@ -1,6 +1,7 @@
 import React from "react";
 import "./Predict.css";
 function Predict({ predict, result }) {
+  console.log(predict);
   return (
     <div
       style={{
@@ -27,7 +28,7 @@ function Predict({ predict, result }) {
           }
           style={{ float: "right", lineHeight: "40px" }}
         >
-          {Math.round(predict[0].probability * 100)}%
+          {predict[0].probability}%
         </h5>
         <div style={{ clear: "both" }}></div>
       </div>
@@ -46,7 +47,7 @@ function Predict({ predict, result }) {
           }
           style={{ float: "right", lineHeight: "40px" }}
         >
-          {Math.round(predict[1].probability * 100)}%
+          {predict[1].probability}%
         </h5>
         <div style={{ clear: "both" }}></div>
       </div>
@@ -65,7 +66,7 @@ function Predict({ predict, result }) {
           }
           style={{ float: "right", lineHeight: "40px" }}
         >
-          {Math.round(predict[2].probability * 100)}%
+          {predict[2].probability}%
         </h5>
         <div style={{ clear: "both" }}></div>
       </div>
