@@ -31,14 +31,16 @@ class UploadImageForm extends Component {
     const data = new FormData();
     data.append("file", this.state.imageFile[0]["file"]);
     data.append("filename", this.state.imageFile[0]["fname"]);
-    axios.post("http://127.0.0.1:5000/predict", data).then((response) => {
-      this.setState({ result: response.data.result });
-      this.setState({ predictions: response.data.predictions });
-      if (this.state.now >= 95 && this.state.result !== "") {
-        clearInterval(this.state.timeOutLoad);
-        this.setState({ isLoading: false });
-      }
-    });
+    axios
+      .post("https://dogify-backend.herokuapp.com/predict", data)
+      .then((response) => {
+        this.setState({ result: response.data.result });
+        this.setState({ predictions: response.data.predictions });
+        if (this.state.now >= 95 && this.state.result !== "") {
+          clearInterval(this.state.timeOutLoad);
+          this.setState({ isLoading: false });
+        }
+      });
   };
 
   handleOnDrop = (newImageFile, onChange) => {
