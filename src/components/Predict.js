@@ -27,7 +27,7 @@ function Predict({ predict, result }) {
           }
           style={{ float: "right", lineHeight: "40px" }}
         >
-          {predict[0].probability * 100}%
+          {Math.round(predict[0].probability * 100)}%
         </h5>
         <div style={{ clear: "both" }}></div>
       </div>
@@ -46,7 +46,7 @@ function Predict({ predict, result }) {
           }
           style={{ float: "right", lineHeight: "40px" }}
         >
-          {predict[1].probability * 100}%
+          {Math.round(predict[1].probability * 100)}%
         </h5>
         <div style={{ clear: "both" }}></div>
       </div>
@@ -65,7 +65,7 @@ function Predict({ predict, result }) {
           }
           style={{ float: "right", lineHeight: "40px" }}
         >
-          {predict[2].probability * 100}%
+          {Math.round(predict[2].probability * 100)}%
         </h5>
         <div style={{ clear: "both" }}></div>
       </div>
