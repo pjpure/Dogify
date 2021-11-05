@@ -46,6 +46,7 @@ img {
   font-weight: 600;
   margin-top: 20px;
   border-radius: 25px;
+  box-shadow: -9px 15px 14px #ffd6c9;
 }
 .placeholder-preview,
 .render-preview {
@@ -55,7 +56,7 @@ img {
   height: 100%;
   width: 100%;
   border-radius: 25px;
-  box-shadow: -9px 15px 10px #ffd6c9;
+  box-shadow: -9px 15px 14px #ffd6c9;
   padding: 20px;
   margin-bottom: 15px;
 }
@@ -107,6 +108,7 @@ img {
   line-height: 5px !important;
   border-radius: 20px !important;
   margin-top: 23px;
+  box-shadow: -9px 15px 10px #ffd6c9;
 }
 
 @media screen and (max-width: 992px) {

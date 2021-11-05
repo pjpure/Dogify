@@ -10,6 +10,7 @@ function Predict({ predict, result }) {
         padding: "20px",
         borderRadius: "25px",
         marginTop: "32px",
+        boxShadow: "-9px 15px 14px #ffd6c9",
       }}
     >
       <h2 style={{ color: "#ff8c5a" }}>Results</h2>
