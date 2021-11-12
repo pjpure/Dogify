@@ -11,16 +11,16 @@ const Placeholder = ({ getInputProps, getRootProps, error, touched }) => (
       <div>
         <h3 style={{ lineHeight: "20pt" }}>Drag & drop your</h3>
         <h3 style={{ lineHeight: "20pt" }}>
-          <strong style={{ color: "#ff8c5a" }}>Dog image</strong> to{" "}
+          <strong style={{ color: "#ff8c5a" }}>Dog Image</strong> to{" "}
           <strong style={{ color: "#ff8c5a" }}>Dogify</strong>
         </h3>
-        <h3 style={{ lineHeight: "20pt" }}>the dog breed</h3>
+        <h3 style={{ lineHeight: "20pt" }}>your dog breed</h3>
         <p style={{ marginTop: "20%" }}>
           or{" "}
           <u style={{ color: "#ff8c5a" }}>
-            <strong>browse file</strong>
+            <strong>Browse file</strong>
           </u>{" "}
-          on your computer
+          from your computer
         </p>
       </div>
     </div>

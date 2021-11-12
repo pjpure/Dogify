@@ -1,3 +1,7 @@
+* {
+  font-family: "Rubik", "Sarabun", sans-serif !important;
+}
+
 html {
   background-color: #fcece4;
 }
@@ -94,7 +98,6 @@ img {
   border-radius: 25px !important;
 }
 .btn-secondary,
-.btn-secondary:hover,
 .btn-secondary:active,
 .btn-secondary:visited {
   color: #000000 !important;
@@ -109,6 +112,11 @@ img {
   border-radius: 20px !important;
   margin-top: 23px;
   box-shadow: -9px 15px 10px #ffd6c9;
+  transition: all ease-in-out 200ms;
+}
+
+.btn-secondary:hover {
+  box-shadow: -2px 10px 15px #ffd6c9;
 }
 
 @media screen and (max-width: 992px) {
@@ -124,4 +132,10 @@ img {
   .comleft {
     padding-left: 0px;
   }
+}
+
+.info {
+  background: white;
+  border-radius: 25px;
+  box-shadow: -9px 15px 10px #ffd6c9;
 }

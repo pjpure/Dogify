@@ -6,6 +6,8 @@ import { Button, Row, Col, ProgressBar } from "react-bootstrap";
 import axios from "axios";
 import "./Home.css";
 import { IoArrowBack } from "react-icons/io5";
+import Info from "../components/Info";
+
 class UploadImageForm extends Component {
   state = {
     imageFile: [],
@@ -125,7 +127,11 @@ class UploadImageForm extends Component {
           ) : (
             <div className="resultPage">
               <Row>
-                <Col md={12} lg={6}>
+                <Col
+                  md={12}
+                  lg={6}
+                  className="d-flex justify-content-center align-items-center"
+                >
                   <div className="comleft">
                     <Field
                       name="imageToUpload"
@@ -156,11 +162,16 @@ class UploadImageForm extends Component {
                           />
                         </div>
 
-                        <div style={{ display: "inline" }}>Back</div>
+                        <div style={{ display: "inline" }}>&nbsp;Back</div>
                       </Button>
                     </div>
                   </div>
                 </Col>
+              </Row>
+              <Row>
+                <div className="info mt-3">
+                  <Info result={this.state.result} />
+                </div>
               </Row>
             </div>
           )}
