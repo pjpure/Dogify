@@ -1,3 +1,3 @@
-Dogify's frontend by pjpure
+Dogify's frontend
 
 web:https://dogify.netlify.app/
